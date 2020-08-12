@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tab Layout</string>
+
+    <string name="fragment1">FRAGMENT 1</string>
+    <string name="fragment2">FRAGMENT 2</string>
+    <string name="fragment3">FRAGMENT 3</string>
+</resources>
