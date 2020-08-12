@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+
+    <!-- Activity -->
+    <string name="home">HOME</string>
+    <string name="detail">DETAIL</string>
+
+    <string-array name="title">
+        <item>NCIS</item>
+        <item>Breaking Bad</item>
+        <item>Five Feet Apart</item>
+        <item>An American Pickle</item>
+        <item>Waiting for the Barbarians</item>
+        <item>G-Loc</item>
+        <item>Drive Angry</item>
+    </string-array>
+
+    <string-array name="genre">
+        <item>Aksi dan Petualangan, Drama</item>
+        <item>Aksi, Drama</item>
+        <item>Percintaan, Drama</item>
+        <item>Komedi</item>
+        <item>Aksi, Drama</item>
+        <item>Aksi, Sci-Fi</item>
+        <item>Fantasy, Aksi, Crime</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>(2003)</item>
+        <item>(2008)</item>
+        <item>(2019)</item>
+        <item>(2020)</item>
+        <item>(2020)</item>
+        <item>(2020)</item>
+        <item>(2011)</item>
+    </string-array>
+
+    <string-array name="images">
+        <item>@drawable/ncis</item>
+        <item>@drawable/breakingbad</item>
+        <item>@drawable/fivefeetapart</item>
+        <item>@drawable/americanpickle</item>
+        <item>@drawable/waitingbarbarian</item>
+        <item>@drawable/gloc</item>
+        <item>@drawable/driveangry</item>
+    </string-array>
+</resources>
