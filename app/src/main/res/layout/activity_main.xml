@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Data berupa edittext -->
+    <EditText
+        android:id="@+id/edt_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_name"
+        android:importantForAutofill="no"
+        android:inputType="text" />
+
+    <!-- Data berupa dropdown -->
+    <Spinner
+        android:id="@+id/action_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="16dp" />
+
+    <!-- Data berupa radio button -->
+    <RadioGroup
+        android:id="@+id/rg_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_value_a" />
+
+        <RadioButton
+            android:id="@+id/rb_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/text_value_b" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_output"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/hint_output" />
+
+    <TextView
+        android:id="@+id/tv_hasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/text_hasil"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold|italic" />
+</LinearLayout>

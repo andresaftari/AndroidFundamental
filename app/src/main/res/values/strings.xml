@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Basic Input Tutorial</string>
+
+    <!-- Hint -->
+    <string name="hint_name">Enter a name</string>
+    <string name="hint_output">TAMPILKAN OUTPUT!</string>
+
+    <!-- Text -->
+    <string name="text_value_a">Value A</string>
+    <string name="text_value_b">Value B</string>
+    <string name="text_hasil">HASIL AKAN MUNCUL DI SINI</string>
+</resources>
