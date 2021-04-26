@@ -8,18 +8,15 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.andresaftari.mod10.R
 import com.andresaftari.mod10.data.KategoriBmi
 import com.andresaftari.mod10.databinding.FragmentHitungBinding
-import com.andresaftari.mod10.ui.HitungFragmentDirections
 
 @SuppressLint("QueryPermissionsNeeded")
 class HitungFragment : Fragment() {
     private val viewModel: HitungViewModel by viewModels()
     private lateinit var binding: FragmentHitungBinding
-    private lateinit var kategoriBmi: KategoriBmi
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -36,6 +33,14 @@ class HitungFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getNavigasi().observe(viewLifecycleOwner, {
+            if (it == null) return@observe
+            findNavController().navigate(
+                HitungFragmentDirections.actionHitungFragmentToSaranFragment(it)
+            )
+            viewModel.selesaiNavigasi()
+        })
 
         viewModel.getHasilBmi().observe(viewLifecycleOwner, {
             if (it == null) return@observe
@@ -57,11 +62,7 @@ class HitungFragment : Fragment() {
         with(binding) {
             button.setOnClickListener { hitungBmi() }
             buttonReset.setOnClickListener { resetForm() }
-            saranButton.setOnClickListener { view: View ->
-                view.findNavController().navigate(
-                    HitungFragmentDirections.actionHitungFragmentToSaranFragment(kategoriBmi)
-                )
-            }
+            saranButton.setOnClickListener { viewModel.mulaiNavigasi() }
             shareButton.setOnClickListener { shareData() }
         }
         setHasOptionsMenu(true)
