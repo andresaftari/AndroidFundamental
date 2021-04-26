@@ -1,17 +1,17 @@
 package com.andresaftari.mod10.ui.history
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.andresaftari.mod10.R
 import com.andresaftari.mod10.databinding.FragmentHistoryBinding
 import com.andresaftari.mod10.db.BmiDb
 import com.andresaftari.mod10.utils.HistoryAdapter
 import com.andresaftari.mod10.utils.HistoryViewModelFactory
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HistoryFragment : Fragment() {
     private lateinit var binding: FragmentHistoryBinding
@@ -36,6 +36,7 @@ class HistoryFragment : Fragment() {
             setHasFixedSize(true)
         }
 
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -47,6 +48,26 @@ class HistoryFragment : Fragment() {
             historyAdapter.updateData(it)
         })
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.history_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_hapus) {
+            hapusData()
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun hapusData() = MaterialAlertDialogBuilder(requireContext())
+        .setMessage(R.string.delete_confirmation)
+        .setPositiveButton(getString(R.string.delete)) { _, _ -> viewModel.hapusData() }
+        .setNegativeButton(getString(R.string.cancel)) { dialog, _ -> dialog.cancel() }
+        .show()
 
     companion object {
         private const val TAG = "HistoryFragment"

@@ -59,7 +59,7 @@ class HitungFragment : Fragment() {
 
             with(binding) {
                 bmiTextView.text = getString(R.string.bmi_x, it.bmi)
-                kategoriTextView.text = getString(R.string.kategori_x, getKategori(it.kategori))
+                tvKategori.text = getString(R.string.kategori_x, getKategori(it.kategori))
                 buttonGroup.visibility = View.VISIBLE
             }
         })
@@ -88,7 +88,7 @@ class HitungFragment : Fragment() {
         radioGroup.clearCheck()
 
         bmiTextView.text = ""
-        kategoriTextView.text = ""
+        tvKategori.text = ""
     }
 
     //Hitung BMI
@@ -128,7 +128,7 @@ class HitungFragment : Fragment() {
             binding.tinggiEditText.text,
             gender,
             binding.bmiTextView.text,
-            binding.kategoriTextView.text
+            binding.tvKategori.text
         )
         val shareIntent = Intent(Intent.ACTION_SEND)
 
@@ -145,9 +145,5 @@ class HitungFragment : Fragment() {
             KategoriBmi.GEMUK -> R.string.gemuk
         }
         return getString(stringRes)
-    }
-
-    companion object {
-        private const val TAG = "HitungFragment"
     }
 }

@@ -33,5 +33,9 @@ menentukan apakah berat badanmu ideal atau tidak. Cobalah sekarang!</string>
 cm\nJenis kelamin: %3$s\n\n%4$s\n%5$s</string>
     <string name="belum_ada_data">Belum ada data</string>
     <string name="history">Histori</string>
+    <string name="hapus_history">Hapus History</string>
 
+    <string name="delete_confirmation">Hapus semua history?</string>
+    <string name="delete">Hapus</string>
+    <string name="cancel">Batal</string>
 </resources>
