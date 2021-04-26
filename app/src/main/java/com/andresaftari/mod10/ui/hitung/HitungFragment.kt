@@ -1,4 +1,4 @@
-package com.andresaftari.mod10.ui
+package com.andresaftari.mod10.ui.hitung
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.andresaftari.mod10.R
 import com.andresaftari.mod10.data.KategoriBmi
 import com.andresaftari.mod10.databinding.FragmentHitungBinding
-import com.andresaftari.mod10.ui.viewmodel.HitungViewModel
+import com.andresaftari.mod10.ui.HitungFragmentDirections
 
 @SuppressLint("QueryPermissionsNeeded")
 class HitungFragment : Fragment() {
@@ -43,6 +43,7 @@ class HitungFragment : Fragment() {
             with(binding) {
                 bmiTextView.text = getString(R.string.bmi_x, it.bmi)
                 kategoriTextView.text = getString(R.string.kategori_x, getKategori(it.kategori))
+                buttonGroup.visibility = View.VISIBLE
             }
         })
     }
@@ -52,7 +53,6 @@ class HitungFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHitungBinding.inflate(layoutInflater, container, false)
-
 
         with(binding) {
             button.setOnClickListener { hitungBmi() }

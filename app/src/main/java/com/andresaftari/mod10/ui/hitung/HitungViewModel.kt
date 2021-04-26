@@ -1,4 +1,4 @@
-package com.andresaftari.mod10.ui.viewmodel
+package com.andresaftari.mod10.ui.hitung
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -23,9 +23,7 @@ class HitungViewModel : ViewModel() {
             bmi >= 25.0 -> KategoriBmi.GEMUK
             else -> KategoriBmi.IDEAL
         }
-
         hasilBmi.value = HasilBmi(bmi, kategori)
-
     }
 
     fun getHasilBmi(): LiveData<HasilBmi?> = hasilBmi
