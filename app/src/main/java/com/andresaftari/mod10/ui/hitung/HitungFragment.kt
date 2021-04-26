@@ -75,6 +75,7 @@ class HitungFragment : Fragment() {
         beratEditText.requestFocus()
         tinggiEditText.setText("")
         radioGroup.clearCheck()
+
         bmiTextView.text = ""
         kategoriTextView.text = ""
     }
