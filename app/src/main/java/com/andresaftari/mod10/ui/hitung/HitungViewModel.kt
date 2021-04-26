@@ -13,8 +13,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class HitungViewModel(private val dao: BmiDao) : ViewModel() {
-    val data = dao.getLastBmi()
-
     private val hasilBmi = MutableLiveData<HasilBmi?>()
     private val navigasi = MutableLiveData<KategoriBmi?>()
 

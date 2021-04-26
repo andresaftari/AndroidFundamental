@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -64,11 +63,6 @@ class HitungFragment : Fragment() {
                 buttonGroup.visibility = View.VISIBLE
             }
         })
-
-        viewModel.data.observe(viewLifecycleOwner, {
-            if (it == null) return@observe
-            Log.d(TAG, "Data tersimpan. ID = ${it.id}")
-        })
     }
 
     override fun onCreateView(
@@ -84,7 +78,6 @@ class HitungFragment : Fragment() {
             shareButton.setOnClickListener { shareData() }
         }
         setHasOptionsMenu(true)
-
         return binding.root
     }
 
