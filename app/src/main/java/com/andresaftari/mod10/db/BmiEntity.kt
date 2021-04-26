@@ -10,5 +10,5 @@ data class BmiEntity(
     var tanggal: Long = System.currentTimeMillis(),
     var berat: Float,
     var tinggi: Float,
-    var isMale: Float
+    var isMale: Boolean
 )

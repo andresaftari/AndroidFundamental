@@ -3,10 +3,18 @@ package com.andresaftari.mod10.ui.hitung
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.andresaftari.mod10.data.HasilBmi
 import com.andresaftari.mod10.data.KategoriBmi
+import com.andresaftari.mod10.db.BmiDao
+import com.andresaftari.mod10.db.BmiEntity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class HitungViewModel : ViewModel() {
+class HitungViewModel(private val dao: BmiDao) : ViewModel() {
+    val data = dao.getLastBmi()
+
     private val hasilBmi = MutableLiveData<HasilBmi?>()
     private val navigasi = MutableLiveData<KategoriBmi?>()
 
@@ -26,6 +34,17 @@ class HitungViewModel : ViewModel() {
             else -> KategoriBmi.IDEAL
         }
         hasilBmi.value = HasilBmi(bmi, kategori)
+
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                val dataBmi = BmiEntity(
+                    berat = berat.toFloat(),
+                    tinggi = tinggi.toFloat(),
+                    isMale = isMale
+                )
+                dao.insert(dataBmi)
+            }
+        }
     }
 
     fun getHasilBmi(): LiveData<HasilBmi?> = hasilBmi
