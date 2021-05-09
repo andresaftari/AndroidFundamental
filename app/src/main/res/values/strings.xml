@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">API Example</string>
+
+    <!-- Title -->
+    <string name="title_about">About</string>
+    <string name="title_search">Search</string>
+    <string name="title_home">Home</string>
+    <string name="title_following">Following</string>
+    <string name="title_followers">Followers</string>
+
+    <string name="search_hint">Tap the search icon to start searching Github users :)</string>
+
+    <!-- Text -->
+    <string name="text_error">Failed to load data :(</string>
+    <string name="text_empty">No data</string>
+    <string name="text_username_about">Username</string>
+    <string name="text_fullname_about">Full Name</string>
+    <string name="text_link_about">Github link</string>
+</resources>
