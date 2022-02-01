@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">RecyclerViewTutorial</string>
+
+    <string-array name="title">
+        <item>NCIS</item>
+        <item>Breaking Bad</item>
+        <item>Five Feet Apart</item>
+        <item>An American Pickle</item>
+        <item>Waiting for the Barbarians</item>
+        <item>G-Loc</item>
+        <item>Drive Angry</item>
+    </string-array>
+
+    <string-array name="genre">
+        <item>Aksi dan Petualangan, Drama</item>
+        <item>Aksi, Drama</item>
+        <item>Percintaan, Drama</item>
+        <item>Komedi</item>
+        <item>Aksi, Drama</item>
+        <item>Aksi, Sci-Fi</item>
+        <item>Fantasy, Aksi, Crime</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>(2003)</item>
+        <item>(2008)</item>
+        <item>(2019)</item>
+        <item>(2020)</item>
+        <item>(2020)</item>
+        <item>(2020)</item>
+        <item>(2011)</item>
+    </string-array>
+
+    <string-array name="images">
+        <item>@drawable/ic_launcher_background</item>
+        <item>@drawable/prisma</item>
+        <item>@drawable/prisma</item>
+        <item>@drawable/prisma</item>
+        <item>@drawable/prisma</item>
+        <item>@drawable/prisma</item>
+        <item>@drawable/prisma</item>
+    </string-array>
+</resources>
