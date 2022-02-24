@@ -3,10 +3,13 @@ package com.andresaftari.rvtutorial
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andresaftari.rvtutorial.databinding.ActivityMainBinding
 import com.andresaftari.rvtutorial.model.Movie
 import com.andresaftari.rvtutorial.utils.ListAdapter
+import com.google.android.material.snackbar.Snackbar
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -37,9 +40,14 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+       val listAdapter =  ListAdapter(listMovie) {
+            // KODE UNTUK AKSI SAAT ITEM RV DIKLIK DI SINI
+            Snackbar.make(binding.root, "Clicked ${it.title}!", Snackbar.LENGTH_SHORT).show()
+        }
+
         binding.rvMovie.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = ListAdapter(listMovie) // kodingan kontroler
+            adapter =  listAdapter // kodingan kontroler
             setHasFixedSize(true)
         }
     }

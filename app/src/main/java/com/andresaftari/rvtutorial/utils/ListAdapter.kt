@@ -7,7 +7,7 @@ import com.andresaftari.rvtutorial.databinding.ItemMainBinding
 import com.andresaftari.rvtutorial.model.Movie
 import com.bumptech.glide.Glide
 
-class ListAdapter(private val list: ArrayList<Movie>) :
+class ListAdapter(private val list: ArrayList<Movie>, val handler: (Movie) -> Unit) :
     RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
@@ -19,10 +19,14 @@ class ListAdapter(private val list: ArrayList<Movie>) :
 
     override fun getItemCount(): Int = list.size
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) =
-        holder.bind(list[position])
+    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+        with(holder) {
+            bind(list[position])
+            binding.root.setOnClickListener { handler(list[position]) }
+        }
+    }
 
-    inner class ListViewHolder(private val binding: ItemMainBinding) :
+    inner class ListViewHolder( val binding: ItemMainBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: Movie) {
